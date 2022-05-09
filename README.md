@@ -1,3 +1,6 @@
+### This library is currently being developed and is not ready for release. The current development status can be seen on the development branch.
+
+
 <h1 align="center">
 <img src="https://raw.githubusercontent.com/AristurtleDev/Branding/main/imgs/aristurtle-logo/aristurtle-logo-256-dark.png#gh-light-mode-only" alt="Aristurtle" width="256">
 <img src="https://raw.githubusercontent.com/AristurtleDev/Branding/main/imgs/aristurtle-logo/aristurtle-logo-256-light.png#gh-dark-mode-only" alt="Aristurtle" width="256">
