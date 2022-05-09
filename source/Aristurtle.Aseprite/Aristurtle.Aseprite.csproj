@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>Christopher Whitley</Authors>
+    <Company>Aristurtle</Company>
+    <Copyright>Copyright (c) 2022 Christopher Whitley</Copyright>
+    <PackageProjectUrl>https://aristurtle.net/aristurlte-aseprite/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/AristurtleDev/Aristurtle.Aseprite</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>aseprite binaryreader</PackageTags>
+    <NeutralLanguage>en</NeutralLanguage>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <FileVersion>1.0.0.1</FileVersion>
+  </PropertyGroup>
+</Project>
