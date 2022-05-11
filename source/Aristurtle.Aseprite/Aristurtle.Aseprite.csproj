@@ -5,15 +5,45 @@
   </PropertyGroup>
 
   <PropertyGroup>
+    <SemanticVersion>0.0.0.1</SemanticVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <Authors>Christopher Whitley</Authors>
     <Company>Aristurtle</Company>
     <Copyright>Copyright (c) 2022 Christopher Whitley</Copyright>
+    <NeutralLanguage>en</NeutralLanguage>
+    <AssemblyVersion>$(SemanticVersion)</AssemblyVersion>
+    <FileVersion>$(SemanticVersion)</FileVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>Aristurtle.Aseprite</PackageId>
+    <Version>$(SemanticVersion)</Version>
+    <Description>A C# cross-platform class library for reading Aseprite .ase/.aseprite files</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://aristurtle.net/aristurlte-aseprite/</PackageProjectUrl>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>aseprite;binary reader;binaryreader</PackageTags>
     <RepositoryUrl>https://github.com/AristurtleDev/Aristurtle.Aseprite</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>aseprite binaryreader</PackageTags>
-    <NeutralLanguage>en</NeutralLanguage>
-    <AssemblyVersion>1.0.0.1</AssemblyVersion>
-    <FileVersion>1.0.0.1</FileVersion>
+    <RepositoryBranch>stable</RepositoryBranch>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../../LICENSE" Pack="true" Visible="false" PackagePath=""/>
+    <None Include="icon.png" Pack="true" PackagePath="\"/>
+    <None Include="../../README.md" Pack="true" Visible="false" PackagePath=""/>
+  </ItemGroup>
+
+  <Target Name="PreparePackageReleaseNotesFromFile" BeforeTargets="GenerateNuspec">
+    <ReadLinesFromFile File="../../RELEASE-NOTES.txt">
+      <Output TaskParameter="Lines" ItemName="ReleaseNoteLines" />
+    </ReadLinesFromFile>
+    <PropertyGroup>
+      <PackageReleaseNotes>@(ReleaseNoteLines, '%0a')</PackageReleaseNotes>
+    </PropertyGroup>
+  </Target>
 </Project>

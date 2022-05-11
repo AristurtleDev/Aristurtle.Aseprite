@@ -249,7 +249,7 @@ namespace Aristurtle.Aseprite.IO
         internal void AddTileset(Tileset tileset) => _tilesets.Add(tileset.ID, tileset);
 
 
-        public Color[] CreateFrame(int id, bool onlyVisible)
+        public Color[] GetFrameColorData(int id, bool onlyVisible)
         {
             if (id < 0 || id >= _frames.Count)
             {
@@ -340,7 +340,7 @@ namespace Aristurtle.Aseprite.IO
             List<Color[]> frames = new List<Color[]>();
             for (int i = 0; i < FrameCount; i++)
             {
-                frames.Add(CreateFrame(i, options.OnlyVisibleFrames));
+                frames.Add(GetFrameColorData(i, options.OnlyVisibleFrames));
             }
 
             //  A key-value dictionary that maps the link between a frame and another frame

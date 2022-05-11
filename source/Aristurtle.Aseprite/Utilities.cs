@@ -21,6 +21,7 @@
 ----------------------------------------------------------------------------- */
 
 using System;
+using System.Drawing;
 using Aristurtle.Aseprite.IO;
 using Aristurtle.Aseprite.ThirdParty.Aseprite;
 
@@ -28,6 +29,12 @@ namespace Aristurtle.Aseprite
 {
     public static class Utilities
     {
+        public static uint ColorToUint(Color color) => DocColor.rgba(color.R, color.G, color.B, color.A);
+        public static Color UintToColor(uint value) => Color.FromArgb(DocColor.rgba_geta(value),
+                                                                      DocColor.rgba_getr(value),
+                                                                      DocColor.rgba_getg(value),
+                                                                      DocColor.rgba_getb(value));
+
         public static Func<uint, uint, int, uint> GetBlendFunction(AsepriteFile.BlendMode mode)
         {
             switch (mode)
